@@ -46,6 +46,7 @@ export class AuthService {
     if (!matches) throw new ForbiddenException('Password incorrect');
 
     // send back to user
+    delete user.hash;
     return user;
   }
 }
